@@ -1,18 +1,6 @@
 <template>
   <Edit v-for="income in incomes" :key="income.id" :income="income"/>
 
-
-
-  <div v-for="income in incomes" :key="income.id">
-      <Link :href="`/income/${income.id}`">
-          {{ income.description }} {{ income.amount }} {{ income.day_deposited }}
-      </Link>
-    <div>
-      <Link :href="`/income/${income.id}/edit`">Edit</Link>
-    </div>
-  </div>
-
-
   <form @submit.prevent="create">
     <div>
       <div>
@@ -29,6 +17,11 @@
         <label>Day Deposited</label>
         <input v-model="form.day_deposited" type="text" />
       </div>
+      <select v-model="form.frequency">
+        <option :value=form.frequency>Monthly</option>
+        <option value="quarterly">Quarterly</option>
+        <option value="yearly">Yearly</option>
+      </select>
 
       <div>
         <button type="submit">Create</button>
