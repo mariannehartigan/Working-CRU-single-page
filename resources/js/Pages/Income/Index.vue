@@ -18,9 +18,9 @@
         <input v-model="form.day_deposited" type="text" />
       </div>
       <select v-model="form.frequency">
-        <option :value=form.frequency>Monthly</option>
-        <option value="quarterly">Quarterly</option>
-        <option value="yearly">Yearly</option>
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Yearly</option>
       </select>
 
       <div>
@@ -32,22 +32,23 @@
 
 <script setup>
 import Edit from './Edit.vue'
-import {Link} from '@inertiajs/vue3'
 import { useForm } from '@inertiajs/vue3'
 defineProps({
   incomes: Array,
 })
 
-
 const form = useForm({
 description: null,
 amount: null,
+frequency: "Monthly",
 day_deposited: null,
 })
 const create = () => {
+  console.log(form.frequency)
 form.post('/income');
 form.description = "";
 form.amount = "";
+form.frequency = "Monthly";
 form.day_deposited = "";
 }
 </script>

@@ -5,13 +5,13 @@
           <input v-model="form.description" type="text" />
           <input v-model="form.amount" type="text" />
           <select v-model="form.frequency">
-        <option :value=form.frequency>Monthly</option>
-        <option value="quarterly">Quarterly</option>
-        <option value="yearly">Yearly</option>
-      </select>
+            <option>Monthly</option>
+            <option>Quarterly</option>
+            <option>Yearly</option>
+          </select>
 
           <input v-model="form.day_deposited" type="text" />
-          <div v-if="props.income.day_deposited == 14">st</div>
+          <span v-if="props.income.day_deposited == 17">st</span>
         </div>
  
       </div>
