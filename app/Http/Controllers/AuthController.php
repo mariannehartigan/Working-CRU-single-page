@@ -26,7 +26,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended('/finances');
+        return redirect()->intended('/income');
     }
 
     public function destroy(Request $request)
@@ -36,7 +36,7 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('finances.index');
+        return redirect()->route('income.index');
     }
 
 }

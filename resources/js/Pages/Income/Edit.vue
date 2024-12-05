@@ -11,7 +11,21 @@
           </select>
 
           <input v-model="form.day_deposited" type="text" />
-          <span v-if="props.income.day_deposited == 17">st</span>
+          <span v-if="
+            props.income.day_deposited == 1 ||
+            props.income.day_deposited == 21 ||
+            props.income.day_deposited == 31">st</span>
+          <span v-else-if="
+            props.income.day_deposited == 2 ||
+            props.income.day_deposited == 22">nd</span>
+          <span v-else-if="
+            props.income.day_deposited == 3 ||
+            props.income.day_deposited == 23">rd</span>
+          <span v-else-if="
+            props.income.day_deposited >= 4 &&
+            props.income.day_deposited <= 20 ||
+            props.income.day_deposited >= 24 &&
+            props.income.day_deposited <= 30">th</span>
         </div>
  
       </div>
