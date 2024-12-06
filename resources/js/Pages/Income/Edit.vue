@@ -26,18 +26,22 @@
             props.income.day_deposited <= 20 ||
             props.income.day_deposited >= 24 &&
             props.income.day_deposited <= 30">th</span>
+          <Link :href="`/income/${props.income.id}`" method="DELETE" as="button">&nbsp Delete</Link>
         </div>
- 
+        
       </div>
     </form>
+
   </template>
  
   <script setup>
   import { useForm } from '@inertiajs/vue3'
+  import {Link} from '@inertiajs/vue3'
   const props = defineProps({
     income: Object,
   })
   const form = useForm({
+    id: props.income.id,
     description: props.income.description,
     amount: props.income.amount,
     frequency: props.income.frequency,

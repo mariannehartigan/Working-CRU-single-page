@@ -16,4 +16,4 @@ Route::resource('user-account', UserAccountController::class)
   ->only(['create', 'store']);
 
 Route::resource('income', IncomeController::class)
-  ->except(['create', 'destroy']);
+  ->except(['create']);
