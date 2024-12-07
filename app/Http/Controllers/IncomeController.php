@@ -34,7 +34,7 @@ class IncomeController extends Controller
     public function store(Request $request)
     {
         Income::create($request->all());
-        return redirect()->route('income.index');
+        return redirect()->route('finances.index');
     }
 
     /**
@@ -70,7 +70,7 @@ class IncomeController extends Controller
     public function update(Request $request, Income $income)
     {
         $income->update($request->all());
-        return redirect()->route('income.index');
+        return redirect()->route('finances.index');
     }
 
 

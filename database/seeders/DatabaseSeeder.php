@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
           'email' => 'test2@example.com',
         ]);
         \App\Models\Income::factory(5)->create();
+        \App\Models\Expense::factory(5)->create();
+
     }
 }

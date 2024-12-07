@@ -19,6 +19,7 @@ class IncomeFactory extends Factory
         return [
             'description' => fake()->company(),
             'amount' => fake()->numberBetween(80, 5000),
+            'frequency' => fake()->randomElement(['Monthly', 'Quarterly', 'Yearly']),
             'day_deposited' => fake()->numberBetween(1,31)
         ];
     }
