@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Income;
+use App\Models\Expense;
 use Illuminate\Http\Request;
 
 class FinancesController extends Controller
@@ -15,7 +16,8 @@ class FinancesController extends Controller
             /* This passes the data to the vue page */
             [
                 /* Income refers to the model name */
-                'incomes' => Income::all()
+                'incomes' => Income::all(),
+                'expenses' => Expense::all()
             ]
         );
     }

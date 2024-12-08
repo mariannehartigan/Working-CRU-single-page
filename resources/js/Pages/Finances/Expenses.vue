@@ -1,5 +1,5 @@
 <template>
-    <Edit v-for="income in incomes" :key="income.id" :income="income"/>
+    <Edit v-for="expense in expenses" :key="expense.id" :expense="expense"/>
   
     <form @submit.prevent="create">
       <div>
@@ -14,15 +14,21 @@
         </div>
   
         <div>
-          <label>Day Deposited</label>
+          <label>Day Due</label>
           <input v-model="form.day_deposited" type="text" />
         </div>
         
         <select v-model="form.frequency">
+          <option>Weekly</option>
           <option>Monthly</option>
           <option>Quarterly</option>
           <option>Yearly</option>
         </select>
+
+        <div>
+          <label>Notes</label>
+          <input v-model="form.notes" type="text" />
+        </div>
   
         <div>
           <button type="submit">Create</button>
@@ -32,10 +38,10 @@
   </template>
   
   <script setup>
-  import Edit from './IncomeEdit.vue'
+  import Edit from './ExpenseEdit.vue'
   import { useForm } from '@inertiajs/vue3'
   defineProps({
-    incomes: Array,
+    expenses: Array,
   })
   
   const form = useForm({
@@ -45,7 +51,7 @@
   day_deposited: null,
   })
   const create = () => {
-  form.post('/income');
+  form.post('/expenses');
   form.description = "";
   form.amount = "";
   form.frequency = "Monthly";

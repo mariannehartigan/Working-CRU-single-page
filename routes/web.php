@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FinancesController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\UserAccountController;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,6 @@ Route::resource('income', IncomeController::class)
 
 Route::get('/finances', [FinancesController::class, 'index'])
   ->name('finances.index');
+
+Route::resource('/expenses', ExpenseController::class)
+  ->except(['create']);
