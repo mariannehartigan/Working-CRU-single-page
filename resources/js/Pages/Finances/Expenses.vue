@@ -1,5 +1,6 @@
 <template>
-    <Edit v-for="expense in expenses" :key="expense.id" :expense="expense"/>
+  FIXED EXPENSES
+    <Edit v-for="expense in expenses" :key="expense.id" :expense="expense" />
   
     <form @submit.prevent="create">
       <div>
@@ -31,7 +32,7 @@
         </div>
   
         <div>
-          <button type="submit">Create</button>
+          <button type="submit">Create Fixed Expense</button>
         </div>
       </div>
     </form>
@@ -49,6 +50,7 @@
   amount: null,
   frequency: "Monthly",
   day_deposited: null,
+  notes: null,
   })
   const create = () => {
   form.post('/expenses');
@@ -56,5 +58,6 @@
   form.amount = "";
   form.frequency = "Monthly";
   form.day_deposited = "";
+  form.notes = "";
   }
   </script>

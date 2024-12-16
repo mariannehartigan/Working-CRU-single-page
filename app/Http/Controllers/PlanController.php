@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Income;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
-class IncomeController extends Controller
+class PlanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {/*
-        return inertia(
-            'Income/Index',
-            [
-                'incomes' => Income::all()
-            ]
-        );*/
+    {
+        //
     }
 
     /**
@@ -25,7 +20,7 @@ class IncomeController extends Controller
      */
     public function create()
     {
-        /*return inertia('Income/Create');*/
+        //
     }
 
     /**
@@ -33,53 +28,41 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
-        Income::create($request->all());
+        Plan::create($request->all());
         return redirect()->route('finances.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Income $income)
+    public function show(string $id)
     {
-        /*return inertia(
-            'Income/Show',
-            [
-                'income' => $income
-            ]
-        );*/
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Income $income)
+    public function edit(string $id)
     {
-        /*return inertia(
-            'Income/Edit',
-            [
-                'income' => $income
-            ]
-        );*/
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Income $income)
+    public function update(Request $request, Plan $plan)
     {
-        $income->update($request->all());
+        $plan->update($request->all());
         return redirect()->route('finances.index');
     }
-
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Income $income)
-    {        //
-        $income->delete();
-
+    public function destroy(Plan $plan)
+    {
+        $plan->delete();
         return redirect()->back();
     }
 }

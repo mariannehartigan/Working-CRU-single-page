@@ -26,6 +26,8 @@ class DatabaseSeeder extends Seeder
         ]);
         \App\Models\Income::factory(5)->create();
         \App\Models\Expense::factory(5)->create();
+        \App\Models\Budget::factory(5)->create();
+        \App\Models\Plan::factory(5)->create();
 
     }
 }

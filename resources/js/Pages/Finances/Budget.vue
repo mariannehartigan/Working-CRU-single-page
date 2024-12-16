@@ -1,6 +1,6 @@
 <template>
-  <br />INCOME
-    <IncomeEdit v-for="income in incomes" :key="income.id" :income="income"/>
+  VARIABLE EXPENSES
+    <BudgetEdit v-for="budget in budgets" :key="budget.id" :budget="budget"/>
 
     <form @submit.prevent="create">
       <div>
@@ -14,42 +14,40 @@
           <input v-model="form.amount" type="text" />
         </div>
   
-        <div>
-          <label>Day Deposited</label>
-          <input v-model="form.day_deposited" type="text" />
-        </div>
-        
         <select v-model="form.frequency">
+          <option>Weekly</option>
           <option>Monthly</option>
           <option>Quarterly</option>
           <option>Yearly</option>
         </select>
+
+        <div>
+        </div>
   
         <div>
-          <button type="submit">Create Income</button>
+          <button type="submit">Create Variable Expense</button>
         </div>
       </div>
     </form>
   </template>
   
   <script setup>
-  import IncomeEdit from './IncomeEdit.vue'
+  import BudgetEdit from './BudgetEdit.vue'
   import { useForm } from '@inertiajs/vue3'
   defineProps({
-    incomes: Array,
+    budgets: Array,
   })
-  
+
   const form = useForm({
   description: null,
   amount: null,
-  frequency: "Monthly",
+  frequency: "Weekly",
   day_deposited: null,
   })
   const create = () => {
-  form.post('/income');
+  form.post('/budget');
   form.description = "";
   form.amount = "";
-  form.frequency = "Monthly";
-  form.day_deposited = "";
+  form.frequency = "Weekly";
   }
   </script>

@@ -4,13 +4,6 @@
         <div @input="update">
           <input v-model="form.description" type="text" :preserve-scroll="true" />
           <input v-model="form.amount" type="text" :preserve-scroll="true" />
-          <select v-model="form.frequency" :preserve-scroll="true">
-            <option>Weekly</option>
-            <option>Monthly</option>
-            <option>Quarterly</option>
-            <option>Yearly</option>
-          </select>
-
           <input v-model="form.day_due" type="text" :preserve-scroll="true" />
           <span v-if="
             props.expense.day_due == 1 ||

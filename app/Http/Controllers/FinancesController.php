@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Income;
 use App\Models\Expense;
+use App\Models\Budget;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
 class FinancesController extends Controller
@@ -17,7 +19,9 @@ class FinancesController extends Controller
             [
                 /* Income refers to the model name */
                 'incomes' => Income::all(),
-                'expenses' => Expense::all()
+                'expenses' => Expense::all(),
+                'budgets' => Budget::all(),
+                'plans' => Plan::all(),
             ]
         );
     }

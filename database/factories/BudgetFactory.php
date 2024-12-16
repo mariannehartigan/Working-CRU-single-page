@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Expense>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Budget>
  */
-class ExpenseFactory extends Factory
+class BudgetFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,11 +17,9 @@ class ExpenseFactory extends Factory
     public function definition(): array
     {
         return [
-            'description' => fake()->company(),
-            'amount' => fake()->numberBetween(10, 1700),
+            'description' => fake()->randomElement(['groceries', 'miscellaneous', 'gas', 'personal budget', 'school expenses']),
+            'amount' => fake()->numberBetween(10, 400),
             'frequency' => fake()->randomElement(['Weekly', 'Monthly', 'Quarterly', 'Yearly']),
-            'day_due' => fake()->numberBetween(1,31),
-            'notes' => fake()->sentence(),
         ];
     }
 }

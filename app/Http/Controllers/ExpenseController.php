@@ -12,12 +12,12 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        return inertia(
+        /*return inertia(
             'Expenses/Index',
             [
                 'expenses' => Expense::all()
             ]
-        );
+        );*/
     }
 
     /**
@@ -25,7 +25,7 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        return inertia('Expense/Create');
+        /*return inertia('Expense/Create');*/
     }
 
     /**
@@ -42,13 +42,12 @@ class ExpenseController extends Controller
      */
     public function show(Expense $expense)
     {
-        return inertia(
+        /*return inertia(
             'Expense/Show',
             [
                 'expense' => $expense
             ]
-        );
-
+        );*/
     }
 
     /**
@@ -56,12 +55,12 @@ class ExpenseController extends Controller
      */
     public function edit(Expense $expense)
     {
-        return inertia(
+        /*return inertia(
             'expense/Edit',
             [
                 'expense' => $expense
             ]
-        );
+        );*/
     }
 
     /**
