@@ -1,14 +1,35 @@
 <template>
-    <Plan 
+<Plan 
       :incomes="$page.props.incomes" 
       :expenses="$page.props.expenses" 
       :budgets="$page.props.budgets"
       :plans="$page.props.plans"
       />
-    <div :style="{'color': 'red' }">
+      <br />
+          <br />
+          <br />
+          <br />          <br />
+          <br />
+          <br />
+          <br />          <br />
+          <br />
+          <br />
+          <br />          <br />
+          <br />
+          <br />
+          <br />          <br />
+          <br />
+          <br />
+          <br />          <br />
+          <br />
+          <br />
+          <br />
+    <div>
     <Income :incomes="$page.props.incomes"/>
     <Expenses :expenses="$page.props.expenses"/>
     <Budget :budgets="$page.props.budgets"/>
+    
+
 </div>
 </template>
 

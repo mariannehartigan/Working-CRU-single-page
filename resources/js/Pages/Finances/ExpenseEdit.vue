@@ -51,6 +51,6 @@
     day_due: props.expense.day_due,
     notes: props.expense.notes,
   })
-  const update = () => form.put(`/expenses/${props.expense.id}`)
+  const update = () => form.put(`/expenses/${props.expense.id}`, {preserveScroll:true})
   </script>
  

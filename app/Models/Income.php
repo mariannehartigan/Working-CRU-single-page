@@ -9,7 +9,7 @@ class Income extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['description', 'amount', 'frequency', 'day_deposited'];
+    protected $fillable = ['month', 'year', 'description', 'amount', 'frequency', 'day_deposited', 'actual', 'paid'];
 
     /* eliminates automatic timestamp columns */
     public $timestamps = false;

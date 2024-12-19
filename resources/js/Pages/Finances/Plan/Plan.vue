@@ -1,5 +1,5 @@
 <template>
-    income
+    income checkbox = paid
     <Income v-for="income in incomes" :key="income.id" :income="income"/>
 
     expenses<FixedExpenses v-for="expense in expenses" :key="expense.id" :expense="expense"/>

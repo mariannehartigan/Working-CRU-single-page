@@ -26,7 +26,7 @@
             props.income.day_deposited <= 20 ||
             props.income.day_deposited >= 24 &&
             props.income.day_deposited <= 30">th</span>
-          <Link :href="`/income/${props.income.id}`" method="DELETE" as="button">&nbsp Delete</Link>
+          <Link :href="`/income/${props.income.id}`" method="DELETE" as="button" preserve-scroll>&nbsp Delete</Link>
         </div>
         
       </div>
@@ -47,6 +47,6 @@
     frequency: props.income.frequency,
     day_deposited: props.income.day_deposited,
   })
-  const update = () => form.put(`/income/${props.income.id}`)
+  const update = () => form.put(`/income/${props.income.id}`, {preserveScroll:true})
   </script>
  

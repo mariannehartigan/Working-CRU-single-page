@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
+            $table->text('month')->nullable();
+            $table->text('year')->nullable();
             $table->text('description')->nullable();
             $table->text('amount')->nullable();
             $table->text('day_deposited')->nullable();
+            $table->boolean('actual')->nullable();
+            $table->boolean('paid')->nullable();
         });
     }
 
